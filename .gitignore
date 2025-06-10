@@ -1,0 +1,7 @@
+# .gitignore
+*.exe          # Blocks all .exe files
+*.out          # Also common for compiled outputs
+*.o            # Object files
+*.a            # Static libraries
+/bin/          # Common folder for executables
+/build/        # Common build directory
