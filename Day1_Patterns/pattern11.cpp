@@ -11,7 +11,7 @@
 using namespace std;
 void patt11(int n )
 {
-      
+      cout << n;
 }
 int main()
 {
