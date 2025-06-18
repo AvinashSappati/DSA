@@ -203,7 +203,7 @@ void PQ()
 
 }
 
-//Set (unique,sorted) ( --> )
+//Set[Binary Search tree] (unique,sorted) ( --> )
 void Set()
 {
       set<int> st;//{}
@@ -211,8 +211,80 @@ void Set()
       st.insert(2);//{1,2}
       st.emplace(2);//{1,2} ,number not inserted
       st.insert(3);//{1,2,3}
-      
+      st.insert(4);//{1,2,3,4}
 
+      //Functionality of insert in vector can be used also,
+      // that only increases efficiency
+
+      //Remaining begin,rbegin,rend,end,size,empty,swap are same
+
+      for(auto it : st)
+      {
+            //cout << it << " " ;
+      }
+      //{1,2,3,4}
+      auto it = st.find(3); // points to 3 
+      auto it1 = st.find(6); // as 6 is not there it oints to just after st.end()
+
+      //erase takes address or number 
+      st.erase(5); //takes lograthimic time
+
+      int cnt = st.count(1); //returns 1 or 0
+      st.erase(it);// it takes constant time
+
+      for(auto it : st)
+      {
+            //cout << it << " ";
+      }
+      //{1,2,4}
+      st.insert(3);//{1,2,3,4}
+      st.insert(5);//{1,2,3,4,5}
+      auto it2 = st.find(2);
+      auto it3 = st.find(4);
+
+      st.erase(it2,it3);//{1,4,5} [first,last)
+      //all other functions similar to vector
+
+      //same as vector(logarathimic time complexity)
+      auto it4 = st.lower_bound(2);// >= 2 
+      auto it5 = st.upper_bound(3);//>3
+}
+
+//Multiset
+void Multiset()
+{
+      //not unique values are stored ,rest are same as set
+      multiset<int> ms;//{}
+      ms.insert(1);//{1}
+      ms.insert(1);//{1,1}
+      ms.insert(1);//{1,1,1}
+
+      ms.erase(1); //all 1's are erased
+
+      int cnt = ms.count(1); //counts number of 1's
+
+      //only a single 1 erased
+      ms.erase(ms.find(1));//address passed
+      //for range erase go with loop
+      auto it1 = ms.find(1);
+      if (it1 != ms.end()) {
+            auto it2 = it1;
+            advance(it2, 2); // Advance iterator by 2 positions
+            ms.erase(it1, it2);   // Erase the range [it1, it2)
+      }
+      //rest all function same as set
+}
+
+//Unordered set
+void USet()
+{
+      unordered_set<int> st;
+      // lower_bound and upper_bound function
+      // does not works , rest all functions are same
+      // as above, it does not stores in any
+      // particular order it has a better complexity
+      // than set in most cases , except some when collision happens
+      //once in a billion we see O(n) , rest are O(1)
 }
 int main()
 {
@@ -222,6 +294,8 @@ int main()
     //Deque();
     //Stack();
     //PQ();//priority_queue
-    Set();
+    //Set();
+    //Multiset();
+    USet();
     return 0;  
 }
