@@ -286,8 +286,59 @@ void USet()
       // than set in most cases , except some when collision happens
       //once in a billion we see O(n) , rest are O(1)
 }
+
+//Map {key,Value} Both can be anyy datatypes , O(log n) complixity
+// map stores unique keys in sorted order , it means the corresepomding outputs also !
+void Map()
+{
+      map<int,int> mpp;
+      map<pair<int,int>,int> mpp1;
+      map<int,pair<int,int>> mpp2;
+
+      // for key 1 value is 2 mpp[key] = value
+      mpp[1] = 2 ;
+      mpp.emplace(3,4);
+      mpp.insert({2,6});
+
+      for(auto it : mpp)
+      {
+            //cout << it.first << "," << it.second << endl;
+      }
+       
+      cout << mpp[1];// 2
+      cout << mpp[5]; // 0
+
+      auto it1 = mpp.find(3);
+      cout << (*it1).second;// 4
+
+      auto it2 = mpp.find(5);// points to mpp.end() if not there
+
+      
+      map<int, int> m = {{1, 10}, {2, 20}, {3, 30}};
+
+      auto it_low = m.lower_bound(2); // Points to {2, 20}
+      auto it_up  = m.upper_bound(2); // Points to {3, 30}
+
+      //erase,swap,size,empty, are same as above
+
+}
+
+//MultiMap(duplicate keys allowed , the only difference b/w Map)
+void MultiMap()
+{
+     //everything same as map , only it can store multipple keys
+     // only mpp[key] cannot be used here 
+}
+
+//UnOrderedMap(not sorted keys ,rest all same to Map)
+// majorly O(1) , worst case O(n) once in a billion.
+void UnOrderMap()
+{
+
+}
 int main()
 {
+    //CONTAINERS AND ITERATORS
     //Pair();
     //Vector();
     //List();
@@ -296,6 +347,9 @@ int main()
     //PQ();//priority_queue
     //Set();
     //Multiset();
-    USet();
+    //USet();
+    //Map();
+    //MultiMap();
+    //UnOrderMap();
     return 0;  
 }
