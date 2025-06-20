@@ -334,6 +334,84 @@ void MultiMap()
 // majorly O(1) , worst case O(n) once in a billion.
 void UnOrderMap()
 {
+}
+
+// This boolean returns whether two pairs in correct or wrong order 
+bool comp(pair<int,int> p1 , pair<int,int> p2)
+{
+      if(p1.second < p2.second ) return true;
+      // internally swaps after returning bool to sort function
+      if(p1.second > p2.second ) return false;
+      //They are same 
+      if(p1.first > p2.first ) return true;
+      return false;
+}
+//Extras
+void Extra()
+{
+      // SORT MEANS ASCENDING ORDER
+      // for array
+      int arr[] = { 1,3,5,2 };
+      sort(arr,arr+4);//{1,2,3,5}
+      //for vector 
+      vector<int> v = {1,4,3,2};
+      sort(v.begin(),v.end());//{1,2,3,4}
+
+      //For DESCENDING ORDER SORTING
+      int arr1[] = {3,56,23,45};
+      sort(arr1,arr1+4,greater<int>());//{56,45,23,3}
+
+      for(auto it : arr1)
+      {
+            //cout << it << " ";
+      }
+
+      //Trending SORT , lol !
+      pair<int,int> a[] = {{1,2},{2,1},{4,1}};
+      /*
+      Sort it according to second element , 
+      if second element is same , then sort acc. to first one in descending.
+      */
+
+      // COMPARITOR
+      // comp is a boolean function (defined)[just like greater<int>()]
+      sort(a,a+3,comp); // {{4,1},{2,1},{1,2}}
+
+      for(auto it : a)
+      {
+            //cout << it.first << " " << it.second << endl;
+      }
+
+      //FUNCTIONS for returning number of 1's in a binary number.
+      int num = 7;
+      int cnt = __builtin_popcount(num);
+
+      long long num1 = 1314125251252514;
+      int cnt1 = __builtin_popcountll(num1);
+
+      cout << cnt << " " << cnt1;
+
+      //Permutations 
+      string s = "123";
+
+      sort(s.begin(),s.end());
+      do{
+            cout << s << endl;
+      }while(next_permutation(s.begin(),s.end()));
+      //OUTPUT (for below output exactly we have used sort() function)
+      //Even for alphanumericals
+      /*
+      123
+      132
+      213
+      231
+      312
+      321
+      */
+      
+      //{ 1,3,5,2 }
+      int maxi = *max_element(arr,arr+4);//5
+      int mini = *min_element(arr,arr+4);//1
 
 }
 int main()
@@ -351,5 +429,7 @@ int main()
     //Map();
     //MultiMap();
     //UnOrderMap();
+    
+    //Extra();
     return 0;  
 }
