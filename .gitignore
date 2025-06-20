@@ -1,5 +1,5 @@
 # .gitignore
-Day1_Patterns/*.exe          # Blocks all .exe files
+*.exe          # Blocks all .exe files
 *.out          # Also common for compiled outputs
 *.o            # Object files
 *.a            # Static libraries
