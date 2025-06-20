@@ -4,6 +4,7 @@ vector<int> divisors(int n)
 {
       //We don't know how many factors may exist so vector container is suitable here
       vector<int> div;
+      // O(sqrt(n))
       for(int i=1;i<=sqrt(n);i++)
       {
             if(n%i == 0 ) 
