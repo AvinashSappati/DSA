@@ -165,8 +165,8 @@ void Queue()
       q.emplace(3);//{1,2,3}
 
       q.back() += 5; //{1,2,8}
-      q.pop();//{1,2} - removed 8
-      q.front(); // returns 1
+      q.pop();//{1,2} - removed 1
+      q.front(); // returns 2
 
       //size swap empty same as stack
 }
