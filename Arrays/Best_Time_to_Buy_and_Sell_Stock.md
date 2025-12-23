@@ -18,6 +18,7 @@
         * **Step 1 (Update Min):** `minPrice = min(minPrice, prices[i])`. (Assume we bought here if it's cheaper than before).
         * **Step 2 (Check Profit):** `currentProfit = prices[i] - minPrice`.
         * **Step 3 (Update Max):** `maxProfit = max(maxProfit, currentProfit)`.
+
     
     * *Time Complexity:* $O(N)$ (One pass).
     * *Space Complexity:* $O(1)$.
